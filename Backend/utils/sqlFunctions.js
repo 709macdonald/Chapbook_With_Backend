@@ -27,3 +27,23 @@ const checkRecordExists = (tableName, column, value) => {
     });
   });
 };
+
+const insertRecord = (tableName, record) => {
+  return new Promise((resolve, reject) => {
+    const query = `INSERT INTO  ${tableName} SET ?`;
+
+    pool.query(query, [record], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+};
+
+module.exports = {
+  createTable,
+  checkRecordExists,
+  insertRecord,
+};
