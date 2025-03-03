@@ -1,0 +1,164 @@
+.fileSearchScreenDiv {
+  z-index: 2;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 24rem);
+  grid-auto-rows: 20rem;
+  gap: 1rem;
+  justify-items: center;
+  margin: 1rem 0 1rem 0;
+  padding: 0 2rem 0 2rem;
+  max-width: 100%;
+  height: 100%;
+}
+
+/* FILE DISPLAYS STYLES*/
+
+.fileDisplayDiv {
+  position: relative;
+  background-color: var(--main-bg-color);
+  margin: 0.5rem;
+  padding: 1rem;
+  width: 22rem;
+  height: 17rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fileDisplayDiv:hover {
+  background-color: var(--hover-bg-color);
+  transform: scale(1.05);
+}
+
+.fileDisplayTopDiv {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  padding: 10px;
+  height: 12rem;
+}
+
+.deleteButtonAndMatchedWordsDiv {
+  flex: 1;
+}
+
+.fileDeleteButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.fileDeleteButton:hover {
+  transform: scale(1.05);
+}
+
+.matchedWords {
+  color: var(--secondary-font-color);
+  font-size: var(--tertiary-font-size);
+  font-style: italic;
+  position: absolute;
+  left: 11rem;
+  bottom: 0;
+}
+
+.fileName {
+  font-size: var(--primary-font-size);
+  margin-left: 0.7rem;
+}
+
+.viewFileButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: var(--font-color);
+  font-size: var(--primary-font-size);
+  background-color: var(--main-bg-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.fileDisplayDiv:hover .viewFileButton {
+  opacity: 1;
+}
+
+.viewFileButton:hover {
+  background-color: var(--hover-bg-color);
+  font-size: 1.3rem;
+}
+
+.documentIcons {
+  font-size: 12rem;
+  color: var(--secondary-font-color);
+  margin: 0.3rem 0 0 1rem;
+}
+
+.noFilesToDisplayText {
+  align-items: center;
+}
+
+/* IPHONE */
+
+@media screen and (max-width: 833px) {
+  .fileSearchScreenDiv {
+    grid-template-columns: 1fr;
+    height: 100vh;
+    overflow-x: hidden;
+    padding: 0 3rem;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .individualFileScreenTopDiv {
+    width: 21rem;
+    padding: 0.5rem 10px 10px 10px;
+  }
+
+  .fileDisplayDiv {
+    width: 20rem;
+    margin: 0;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+
+  .documentIcons {
+    margin-top: 2rem;
+  }
+
+  .fileDisplayTopDiv {
+    margin-left: 1.5rem;
+  }
+
+  .matchedWords {
+    left: auto;
+    right: 1rem;
+    max-width: 50%;
+  }
+
+  .documentIcons {
+    font-size: 8rem;
+  }
+
+  .fileName {
+    font-size: 1rem;
+    margin-left: 2rem;
+    word-break: break-word;
+  }
+
+  .pageControlsDiv {
+    width: 15rem;
+    bottom: 2rem;
+    position: absolute;
+  }
+
+  .pdfCanvas {
+    overflow: auto;
+  }
+}

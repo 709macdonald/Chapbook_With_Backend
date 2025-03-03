@@ -1,0 +1,326 @@
+.textEditorScreenDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.newFileTopDiv {
+  background-color: var(--main-bg-color);
+  padding: 1rem 4rem 2rem 4rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-top: 1rem;
+}
+
+.textEditorDiv {
+  background-color: white;
+  flex: 1;
+  color: black;
+  padding: 4rem;
+  width: 50rem;
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  height: calc(100vh - 200px);
+  margin-top: 2rem;
+}
+
+.newFileTopButtonsDiv {
+  display: flex;
+}
+
+.documentNameDiv {
+  padding: 1rem 0 0 0;
+  width: 100%;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.documentNameInput {
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  color: var(--font-color);
+  width: auto;
+  min-width: 100%;
+  white-space: nowrap;
+  overflow-x: visible;
+}
+
+.documentNameDiv:hover {
+  cursor: text;
+}
+
+.newDocTagsInputDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.newDocTagsList {
+  position: absolute;
+  top: 100%;
+  width: 60%;
+  background-color: var(--secondary-bg-color);
+  z-index: 999;
+  overflow-y: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.styleButtonsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.editStyleButton {
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: transparent;
+  border-radius: 0.2rem;
+  border: 1px solid var(--font-color);
+  margin: 0 0.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-color);
+  font-size: 1rem;
+}
+
+.AIButton {
+  position: relative;
+}
+
+.aiToolsDiv {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  left: 4rem;
+  margin-top: 1rem;
+}
+
+.generateContentButton {
+  width: 8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.generateContentButton:hover {
+  transform: scale(1.2);
+  background-color: var(--hover-bg-color);
+}
+
+.colorPickerIcon {
+  color: var(--font-color);
+}
+
+.colorButtonDiv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all !important;
+}
+
+.colorsDiv {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: transparent;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 100px;
+  z-index: 9999 !important;
+  pointer-events: all !important;
+}
+
+.colorButton {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: left;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--font-color);
+  box-shadow: 0.4rem 0.4rem 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+  z-index: 9999 !important;
+  pointer-events: all !important;
+}
+
+.DraftEditor-editorContainer {
+  z-index: 0 !important;
+}
+
+.colorButton:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.saveAndDeleteButtonsDiv {
+  display: flex;
+  margin-left: 2rem;
+}
+
+.leftAlignButton {
+  margin-left: 2rem;
+}
+
+.rightAlignButton {
+  margin-right: 2rem;
+}
+
+.editStyleButton:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.editStyleButton.bg-gray-300 {
+  background-color: var(--hover-bg-color);
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+.public-DraftStyleDefault-ltr {
+  text-align: inherit !important;
+}
+q .DraftEditor-root {
+  width: 100%;
+  height: 100%;
+}
+
+.DraftEditor-editorContainer,
+.public-DraftEditor-content {
+  height: 100%;
+}
+
+.newDocBackButton {
+  background-color: transparent;
+  color: var(--font-color);
+  font-size: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.newDocBackButton:hover {
+  transform: scale(1.2);
+  background-color: var(--hover-bg-color);
+}
+
+/* TABLET */
+
+@media screen and (max-width: 1231px) {
+  .textEditorScreenDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .newFileTopDiv {
+    padding: 1rem;
+    margin: 1.5rem auto 0 auto;
+    width: 45rem;
+  }
+
+  .newDocBackButton {
+    margin: 0 1rem 0 0;
+  }
+}
+
+.textEditorDiv {
+  max-width: 45rem;
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+/* IPHONE */
+
+@media screen and (max-width: 833px) {
+  .textEditorScreenDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .newFileTopDiv {
+    padding: 1rem;
+    margin: 1.5rem auto 0 auto;
+    max-width: 23rem;
+  }
+
+  .newDocBackButton {
+    margin: 0 1rem 0 0;
+  }
+
+  .backButtonDiv {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .documentNameDiv {
+    width: 100%;
+  }
+
+  .editStyleButton {
+    height: 1.7rem;
+    width: 1.7rem;
+  }
+
+  .leftAlignButton {
+    margin-left: 0.5rem;
+  }
+
+  .rightAlignButton {
+    margin-right: 0.5rem;
+  }
+
+  .textEditorDiv {
+    width: 20rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+  }
+
+  .saveAndDeleteButtonsDiv {
+    margin-left: 0.5rem;
+  }
+}
